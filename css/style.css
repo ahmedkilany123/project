@@ -6,26 +6,21 @@
     --main-color: #00ff34;
     --alt-color: #09b12b;
     --orange:#ff7800;
-    --black:#eee;
+    --white:#eee;
     --light-color:#dad6d6;
     --fff-color:#130f40;
     ---box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1);
-    --border:0.2rem solid rgba(0,0,0,0.1);
-    --outline: 0.1rem solid rgba(0,0,0,0.1);
-    --outline-hover: 0.2rem solid var(--black);
     --background: linear-gradient(90deg, rgba(7,5,39,1) 0%, rgba(15,15,66,1) 47%, rgba(15,69,80,1) 100%);
-    --eee-color: #eee;
 }
 .dark-theme {
-    --main-color: #00ff34;
-    --alt-color: #09b12b;
     --pading-right: 80px;
     --padding-left: 80px; 
+    --main-color: #00ff34;
+    --alt-color: #09b12b;
     --fff-color: #fff;
-    --black:black;
+    --white:black;
     --orange:orangered;
     --background: radial-gradient(circle, rgba(240,200,218,1) 0%, rgba(148,187,233,1) 100%);
-    --eee-color:#000000;
 }
 
 * {
@@ -63,9 +58,9 @@ section {
     display: inline-block;
     padding: 0.4rem 1rem;
     font-size: 1.7rem;
-    color: var(--black);
+    color: var(--white);
     cursor: pointer;
-    border: .2rem solid var(--black);
+    border: .2rem solid var(--white);
     border-radius: .5rem;
     -webkit-border-radius: .5rem;
     -moz-border-radius: .5rem;
@@ -86,9 +81,17 @@ header {
     justify-content: space-between;
     padding: 20px 80px;
     font-weight: 700;
-    background: transparent;
+    background: var(--background);
     z-index: 100;
     flex-wrap: wrap;
+}
+.header .navbar.active {
+    right: 2rem;
+    transition: .4s linear;
+    -webkit-transition: .4s linear;
+    -moz-transition: .4s linear;
+    -ms-transition: .4s linear;
+    -o-transition: .4s linear;
 }
 header .logo a {
     font-size: 26px;
@@ -163,7 +166,7 @@ header .left div.mode {
     width: 3rem;
     line-height: 4.5rem;
     background: transparent;
-    color: var(--black);
+    color: var(--white);
     font-size: 1.7rem;
     /* margin-right: 0.3rem; */
     text-align: center;
@@ -229,19 +232,19 @@ header .search-form input {
     background: none;
     text-transform: none;
     font-size: 1.6rem;
-    color: var(--black);
+    color: var(--white);
     padding: 0 1.5rem;
 }
 header .search-form label {
     font-size: 2.2rem;
     padding-right: 1.5rem;
-    color: var(--black);
+    color: var(--white);
     cursor: pointer;
 }
 header .search-form label:hover {
     color: var(--orange);
 }
-.shopping-cart {
+.chat-box {
     overflow: hidden;
     position: fixed;
     bottom: 0;
@@ -257,7 +260,7 @@ header .search-form label:hover {
     -ms-border-radius:.5rem ;
     -o-border-radius:.5rem ;
 }
-.shopping-cart.active {
+.chat-box.active {
     right: 2rem;
     transition: 0.4s linear;
     -webkit-transition: 0.4s linear;
@@ -265,7 +268,7 @@ header .search-form label:hover {
     -ms-transition: 0.4s linear;
     -o-transition: 0.4s linear;
 }
-.shopping-cart {
+.chat-box {
     padding: 0;
     border-radius:6px;
     -moz-border-radius:6px;
@@ -273,7 +276,7 @@ header .search-form label:hover {
     -o-border-radius:6px;
     -webkit-border-radius:6px;
 }
-.shopping-cart .title {
+.chat-box .title {
     background: var(--orange);
     /* width: 100%; */
     padding: 5px 10px;
@@ -283,13 +286,13 @@ header .search-form label:hover {
     margin: 0;
     height: 70px;
 }
-.shopping-cart .title i {
+.chat-box .title i {
     font-size: 22px;
 }
-.shopping-cart .title .logo {
+.chat-box .title .logo {
     width: fit-content;
 }
-.shopping-cart .start-ch {
+.chat-box .start-ch {
     padding: 5px 10px;
     background: white;
     width: 80%;
@@ -304,19 +307,19 @@ header .search-form label:hover {
     -o-border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.shopping-cart .start-ch p {
+.chat-box .start-ch p {
     color: black;
     text-align: center;
     font-size: 18px;
     margin: 5px 0;
 }
-.shopping-cart .start-ch .user-img {
+.chat-box .start-ch .user-img {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-.shopping-cart .start-ch .user-img img {
+.chat-box .start-ch .user-img img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -325,7 +328,7 @@ header .search-form label:hover {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
-.shopping-cart .start-ch .user-img img:hover {
+.chat-box .start-ch .user-img img:hover {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -338,19 +341,19 @@ header .search-form label:hover {
     -o-transition: .5s;
 }
 
-.shopping-cart .start-ch {
+.chat-box .start-ch {
 
 }
-header .shopping-cart .box .content .quantity {
+header .chat-box .box .content .quantity {
     padding-left: 1rem;
 }
-header .shopping-cart .total {
+header .chat-box .total {
     font-size: 2.5rem;
     padding: 1rem 0;
     text-align: center;
-    color: var(--black);
+    color: var(--white);
 }
-header .shopping-cart .btn {
+header .chat-box .btn {
     display: block;
     text-align: center;
     margin: 1rem;
@@ -382,14 +385,14 @@ header .login-form.active {
 header .login-form h3 {
     font-size: 2.5rem;
     text-transform: capitalize;
-    color: var(--black);
+    color: var(--white);
 }
 header .login-form .box {
     margin: .7rem 0;
-    background: var(--eee-color);
+    background: #eee;
     padding: 1rem;
     font-size: 1.6rem;
-    color: var(--black);
+    color: var(--white);
     width: 100%;
     text-transform: none;
     border-radius: .5rem;
@@ -401,7 +404,11 @@ header .login-form .box {
 header .login-form p {
     font-size: 1.4rem;
     padding: .5rem 0;
-    color: var(--light-color);
+    color: var(--white);
+}
+header .login-form .btn {
+    color: black;
+    font-weight: 500;
 }
 
 @media (max-width:767px) {
@@ -434,6 +441,15 @@ header .login-form p {
         gap: 30px;
         margin-top: -10px;
     }
+    header .login-form.active {
+        right: 4rem;
+    }
+    header .search-form.active {
+        right: 4rem;
+        width: 80%;
+        background: var(--light-color);
+    }
+    
 }
 
 

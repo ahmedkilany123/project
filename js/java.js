@@ -8,7 +8,7 @@ document.querySelector('#search-btn').onclick = () => {
 
 }
 
-let shoppingCart = document.querySelector('.shopping-cart');
+let shoppingCart = document.querySelector('.chat-box');
 document.querySelector('#cart-btn').onclick = () => {
     shoppingCart.classList.toggle('active');
     saerchform.classList.remove('active');
